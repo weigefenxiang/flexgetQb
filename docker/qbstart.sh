@@ -2,7 +2,7 @@
 
 flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute
 tail -n 40 /root/logs/flexget.log
-tail -n 50 /config/qBittorrent/logs/qbittorrent.log
+tail -n 20 /config/qBittorrent/logs/qbittorrent.log
 find / -name qbittorrent.log
 start=$(date +%M)
 
@@ -17,8 +17,8 @@ do
     echo "第 $i 次 开始执行flexget任务..." 
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute 
     tail -n 40 /root/logs/flexget.log
+    tail -n 20 /config/qBittorrent/logs/qbittorrent.log
     tail -n 4 /root/logs/autoremove*.log
-    #tail -n 50 /config/qBittorrent/qbittorrent.log
     i=0
     let y++
     end=$(date +%M)
