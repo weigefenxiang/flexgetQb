@@ -14,7 +14,7 @@ ADD qbstart.sh /root/qbstart.sh
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Delment='wget unzip net-tools curl vim'
-ARG PIPRequirement='flexget autoremove-torrents qbittorrentapi'
+ARG PIPRequirement='flexget autoremove-torrents qbittorrent-api'
 
 RUN	apt update && apt install -y $Requirement \
 	&& ln -s /usr/bin/python3.8 /usr/bin/python \
