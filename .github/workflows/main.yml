@@ -48,7 +48,6 @@ jobs:
         df -h
     - name: start
       run: |
-        chmod +x docker/qbstart.sh
-        bash docker/qbstart.sh
+        docker exec qb  ./qbstart.sh
 #############
        
