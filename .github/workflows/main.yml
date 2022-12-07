@@ -11,8 +11,28 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VER: "0.1"
-      #DH: "${{ secrets.DOCKERHUB_USERNAME }}/autoclash"
+      DH: "${{ secrets.DOCKERHUB_USERNAME }}/flexgetqb"
       TZ: Asia/Shanghai
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
+    - run: docker build -t image1 docker/.
+    -
+      name: Login to DockerHub
+      uses: docker/login-action@v1 
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    - 
+      name: Push
+      run: |
+          docker tag image1 $DH:$VER
+          docker push $DH:$VER
+          docker tag image1 $DH
+          docker push $DH
+    - run: |
+        sudo ufw allow 55555 && date
+        docker run -itd --privileged --name ub -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 --restart=always  image1 bash
+        
+    ###############
+       
