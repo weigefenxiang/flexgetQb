@@ -34,6 +34,9 @@ jobs:
       run: |
         sudo ufw allow 55555 && date
         PWD=`pwd` && echo $PWD
+        ls -al /home/runner/work/flexgetQb/flexgetQb
+        ls -al /home/runner/work/flexgetQb/
+        find / -name Dockerfile
         configYml=$PWD/yaml.zip
         echo configYml
         unzip -nP "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip -d $PWD/yaml.zip
