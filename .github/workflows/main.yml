@@ -4,6 +4,8 @@ on:
     paths:
       - '.github/**'
       #- '!docker/**'
+  #schedule:
+    #- cron: '* */6 * * *'
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -11,7 +13,7 @@ jobs:
       VER: "0.1"
       DH: "${{ secrets.DOCKERHUB_USERNAME }}/flexgetqb"
       TZ: Asia/Shanghai
-    timeout-minutes: 10
+    #timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
     - name: 解压
@@ -46,9 +48,10 @@ jobs:
         -v ${PWD}/docker/qbapi.py:/root/qbapi.py  \
         image1
         df -h
-    - name: start
+    - name: START
       run: |
         docker exec qb  ./qbstart.sh
+    - name: STOP
         docker exec qb python qbapi.py
-#####################
+######################
        
