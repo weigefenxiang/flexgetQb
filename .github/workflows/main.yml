@@ -24,7 +24,7 @@ jobs:
   #      exit
     - name: 解压
       run: |
-        sudo date && ufw allow 55555,56881 
+        date && sudo ufw allow 55555  && sudo ufw allow 56881 
         unzip -P "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip
         unzip -P "${{ secrets.ZIPPASSWORD }}" docker/autoremove.zip
     - run: docker build -t image1 docker/.
