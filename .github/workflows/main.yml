@@ -16,12 +16,19 @@ jobs:
     #timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
+    - name: 打洞
+      run: |
+        PWD=`pwd`
+        python ${PWD}/docker/natter.py -t 55555
     - name: 解压
       run: |
         date && sudo ufw allow 55555  && sudo ufw allow 56881 
         unzip -P "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip
         unzip -P "${{ secrets.ZIPPASSWORD }}" docker/autoremove.zip
-    - run: docker build -t image1 docker/.
+    - name: 构建镜像
+      run: |
+        PWD=`pwd`
+        docker build -t image1 docker/.
     #-
     #  name: Login to DockerHub
     #  uses: docker/login-action@v1 
