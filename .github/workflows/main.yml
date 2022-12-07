@@ -19,8 +19,8 @@ jobs:
     - name: NAT类型
       run: |
         pip install pystun3
-        which python 
-        which python3 
+        python3 -V
+        find /usr -name pystun3
         exit
     - name: 解压
       run: |
