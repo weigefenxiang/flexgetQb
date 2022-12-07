@@ -12,9 +12,9 @@ ADD .vimrc /root/.vimrc
 ADD qbconfig /config
 ADD qbstart.sh /root/qbstart.sh
 
-#ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
+# ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Requirement='python3.8 python3-pip wget' 
-#ARG Delment='wget unzip net-tools curl vim'
+# ARG Delment='wget unzip net-tools curl vim'
 ARG Delment='wget'
 ARG PIPRequirement='flexget autoremove-torrents qbittorrent-api'
 
