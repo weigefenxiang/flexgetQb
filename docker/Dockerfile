@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /root/
 
 ADD .vimrc /root/.vimrc
-ADD qbconfig /config           # qb配置
+ADD qbconfig /config
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Delment='wget unzip'
