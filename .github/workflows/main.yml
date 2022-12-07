@@ -43,7 +43,6 @@ jobs:
     - name: Docker
       run: |
         docker run -itd --privileged --name qb -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 -v "${PWD}"/config.yml:/root/config.yml --restart=always  image1
-        docker exec qb  cat /root/config.yml
         docker exec qb  ls -al /root/
         docker exec qb  ls -al /root/plugins
         docker exec qb  flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute
