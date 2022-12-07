@@ -10,16 +10,23 @@ WORKDIR /root/
 
 ADD .vimrc /root/.vimrc
 ADD qbconfig /config
+ADD yaml.zip /root/yaml.zip
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Delment='wget unzip'
 ARG PIPRequirement='flexget autoremove-torrents'
+ARG ZIPPASSWORD="${{ secrets.DOCKERHUB_USERNAME }}"
 
 RUN	apt update && apt install -y $Requirement \
 	&& ln -s /usr/bin/python3.8 /usr/bin/python \
 	&& pip install $PIPRequirement \
 	&& which flexget && flexget -V \
-	&& which pip && pip -V
+	&& which pip && pip -V \
+	&& echo $ZIPPASSWORD \
+	&& unzip -nP $ZIPPASSWORD yaml.zip -d /root/ \
+	&& mkdir -P /root/logs \
+	&& flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute
+	
 # && pip install flexget \
 # && which flexget
 
