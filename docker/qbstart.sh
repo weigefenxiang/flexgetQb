@@ -12,7 +12,7 @@ do
   echo "正在删除种子..." 
   autoremove-torrents --conf=/root/autoremove.config.yml  --log=/root/logs/
   if [ i -ge 3 ];then
-    echo "第${i}次 开始执行任务..." 
+    echo "第$i次 开始执行任务..." 
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute
     i=0
     y+=1
