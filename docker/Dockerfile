@@ -10,7 +10,6 @@ WORKDIR /root/
 
 ADD .vimrc /root/.vimrc
 ADD qbconfig /config
-ADD yaml.zip /root/yaml.zip
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Delment='wget unzip'
