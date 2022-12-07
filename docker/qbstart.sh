@@ -1,7 +1,7 @@
 #!/bin/bash
 
 flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute
-tail -n 20 /root/logs/flexget.log
+tail -n 40 /root/logs/flexget.log
 start=$(date +%M)
 
 sleep 1m
@@ -14,8 +14,8 @@ do
   if [[ $i -ge 4 ]];then   # 4 4分钟
     echo "第 $i 次 开始执行flexget任务..." 
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute 
-    tail -n 20 /root/logs/flexget.log
-    tail -n 10 /root/logs/autoremove*.log
+    tail -n 40 /root/logs/flexget.log
+    tail -n 4 /root/logs/autoremove*.log
     i=0
     let y++
     end=$(date +%M)
