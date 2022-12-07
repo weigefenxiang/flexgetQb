@@ -12,7 +12,7 @@ do
   echo "正在删除种子..." 
   autoremove-torrents --conf=/root/autoremove.config.yml  --log=/root/logs/ &>/dev/null
   if [[ $i -ge 4 ]];then   # 4 4分钟
-    echo "第 $i 次 开始执行任务..." 
+    echo "第 $i 次 开始执行flexget任务..." 
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute 
     tail -n 20 /root/logs/flexget.log
     tail -n 10 /root/logs/autoremove*.log
@@ -27,6 +27,5 @@ do
     fi
   fi
   let i++
-  echo "正在睡眠..." 
   sleep 1m
 done
