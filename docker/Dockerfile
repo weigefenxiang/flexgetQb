@@ -13,14 +13,15 @@ RUN rm -f /config
 ADD .vimrc /root/.vimrc
 ADD qbconfig /config
 
-ARG Requirement='wget unzip net-tools curl vim python3.8 python-pip' 
+ARG Requirement='wget unzip net-tools curl vim python3.8' 
 ARG Delment='wget unzip'
 
 RUN	apt update && apt install -y $Requirement \
 	&& which python3.8 \
 	&& which pip \
-	&& pip install flexget \
-	&& which flexget
+	&& find / -name  pip 
+	#&& pip install flexget \
+	#&& which flexget
 
 RUN     sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list \
 	&& sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list \
