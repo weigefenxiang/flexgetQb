@@ -15,11 +15,13 @@ jobs:
       TZ: Asia/Shanghai
     #timeout-minutes: 10
     steps:
-    - uses: actions/checkout@v3
+    #- uses: actions/checkout@v3
     - name: NAT类型
       run: |
         pip install pystun3
-        ystun3
+        which ystun3
+        find . -name pystun3-1.0.0
+        find / -name pystun3-1.0.0
     - name: 解压
       run: |
         sudo ufw allow 55555,56881 && date
