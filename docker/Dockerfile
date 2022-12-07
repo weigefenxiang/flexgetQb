@@ -4,7 +4,11 @@ LABEL maintainer=Eleven
 
 MAINTAINER author "Eleven"
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 WORKDIR /root/
+
+ADD .vimrc /root/.vimrc
 
 ARG Requirement='wget unzip net-tools curl vim python3.8 python-pip' 
 ARG Delment='wget unzip'
@@ -13,7 +17,7 @@ RUN	apt update && apt install -y $Requirement \
 	&& which python3.8 \
 	&& which pip \
 	&& pip install flexget \
-	&& which flexget \
+	&& which flexget
 
 RUN     sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list \
 	&& sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list \
