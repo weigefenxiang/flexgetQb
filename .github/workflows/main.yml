@@ -15,7 +15,7 @@ jobs:
       TZ: Asia/Shanghai
     #timeout-minutes: 10
     steps:
-    #- uses: actions/checkout@v3
+    - uses: actions/checkout@v3
   #  - name: NAT类型
    #   run: |
   #      pip install pystun3
@@ -24,11 +24,9 @@ jobs:
   #      exit
     - name: 解压
       run: |
-        PWD=`pwd`
-        ls -al ${PWD}
         date && sudo ufw allow 55555  && sudo ufw allow 56881 
-        unzip -P "${{ secrets.ZIPPASSWORD }}" ${PWD}/docker/yaml.zip
-        unzip -P "${{ secrets.ZIPPASSWORD }}" ${PWD}/docker/autoremove.zip
+        unzip -P "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip
+        unzip -P "${{ secrets.ZIPPASSWORD }}" docker/autoremove.zip
     - run: docker build -t image1 docker/.
     #-
     #  name: Login to DockerHub
