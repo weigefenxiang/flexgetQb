@@ -19,7 +19,6 @@ jobs:
     - name: NAT类型
       run: |
         pip install pystun3
-        which ystun3
         find . -name pystun3-1.0.0
         find / -name pystun3-1.0.0
     - name: 解压
