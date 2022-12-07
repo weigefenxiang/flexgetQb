@@ -21,15 +21,13 @@ ARG PIPRequirement='flexget autoremove-torrents qbittorrent-api pystun3'
 RUN	apt update && apt install -y $Requirement \
 	&& ln -s /usr/bin/python3.8 /usr/bin/python \
 	&& pip install $PIPRequirement \
-	&& which flexget && flexget -V \
-	&& which pip && pip -V \
 	&& mkdir -p /root/logs \
 	&& mkdir -p /root/plugins \
 	&& wget -O /root/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py  \
 	&& rm -rf /var/lib/apt/lists/* && apt clean \
 	&& chmod +x /root/qbstart.sh
 
-RUN 	pystun3	
+# RUN 	pystun3	
 RUN 	apt purge -y $Delment \
 	&& apt autoremove -y \
 	&& rm -rf /var/lib/apt/lists/* && apt clean
