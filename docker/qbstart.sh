@@ -1,6 +1,7 @@
 #!/bin/bash
 
 flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute
+tail -n 20 /root/logs/flexget.log
 start=$(date +%M)
 
 sleep 1m
