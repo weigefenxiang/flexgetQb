@@ -21,8 +21,8 @@ RUN	apt update && apt install -y $Requirement \
 	&& pip install $PIPRequirement \
 	&& which flexget && flexget -V \
 	&& which pip && pip -V \
-	&& mkdir -P /root/logs \
-	&& mkdir -P /config/plugins \
+	&& mkdir -p /root/logs \
+	&& mkdir -p /config/plugins \
 	&& wget -O /config/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py 
 	
 # && pip install flexget \
