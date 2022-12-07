@@ -13,10 +13,13 @@ ADD qbconfig /config
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Delment='wget unzip'
+ARG PIPRequirement='flexget autoremove-torrents'
 
 RUN	apt update && apt install -y $Requirement \
 	&& ln -s /usr/bin/python3.8 /usr/bin/python \
-	&& find / -name  pip 
+	&& pip -V \
+	&& pip install $PIPRequirement \
+	&& which flexget \
 # && pip install flexget \
 # && which flexget
 
