@@ -19,8 +19,9 @@ jobs:
     - name: NAT类型
       run: |
         pip install pystun3
-        find . -name pystun3-1.0.0
-        find / -name pystun3-1.0.0
+        which python 
+        which python3 
+        exit
     - name: 解压
       run: |
         sudo ufw allow 55555,56881 && date
