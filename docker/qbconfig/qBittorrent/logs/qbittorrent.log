@@ -1,0 +1,47 @@
+(N) 2022-12-07T14:41:54 - qBittorrent v4.3.9 started
+(N) 2022-12-07T14:41:54 - Using config directory: /config/qBittorrent/
+(I) 2022-12-07T14:41:54 - Trying to listen on: 0.0.0.0:6881,[::]:6881
+(N) 2022-12-07T14:41:54 - Peer ID: -qB4390-
+(N) 2022-12-07T14:41:54 - HTTP User-Agent is 'qBittorrent/4.3.9'
+(I) 2022-12-07T14:41:54 - DHT support [ON]
+(I) 2022-12-07T14:41:54 - Local Peer Discovery support [ON]
+(I) 2022-12-07T14:41:54 - PeX support [ON]
+(I) 2022-12-07T14:41:54 - Anonymous mode [OFF]
+(I) 2022-12-07T14:41:54 - Encryption support [ON]
+(W) 2022-12-07T14:41:54 - Couldn't load IP geolocation database. Reason: No such file or directory
+(N) 2022-12-07T14:41:55 - Using built-in Web UI.
+(N) 2022-12-07T14:41:55 - Web UI translation for selected locale (en_US) has been successfully loaded.
+(N) 2022-12-07T14:41:55 - Web UI: Now listening on IP: *, port: 55555
+(W) 2022-12-07T14:41:55 - Couldn't load torrents queue from '/config/qBittorrent/BT_backup/queue'. Error: No such file or directory
+(I) 2022-12-07T14:41:55 - Successfully listening on IP: 127.0.0.1, port: TCP/6881
+(I) 2022-12-07T14:41:55 - Successfully listening on IP: 127.0.0.1, port: UDP/6881
+(I) 2022-12-07T14:41:55 - Successfully listening on IP: 172.17.0.10, port: TCP/6881
+(I) 2022-12-07T14:41:55 - Successfully listening on IP: 172.17.0.10, port: UDP/6881
+(I) 2022-12-07T14:41:57 - IP geolocation database loaded. Type: DBIP-Country-Lite. Build time: Thu Dec 1 09:29:19 2022.
+(I) 2022-12-07T14:41:57 - Successfully updated IP geolocation database.
+(N) 2022-12-07T14:42:01 - WebAPI login success. IP: ::ffff:172.17.0.1
+(N) 2022-12-07T14:42:09 - 已成功加载所选地区 (zh) 的 Web UI 翻译。
+(N) 2022-12-07T14:42:09 - Web UI：正在监听 IP：*，端口：55555
+(I) 2022-12-07T14:42:36 - DHT 支持 [关闭]
+(W) 2022-12-07T14:42:36 - 开关 PeX 支持需要重启
+(I) 2022-12-07T14:42:36 - 本地用户发现支持 [关闭]
+(N) 2022-12-07T14:42:36 - Web UI：正在监听 IP：*，端口：55555
+(N) 2022-12-07T14:44:49 - qBittorrent v4.3.9 已启动
+(N) 2022-12-07T14:44:49 - 使用配置目录：/config/qBittorrent/
+(I) 2022-12-07T14:44:49 - 尝试监听：0.0.0.0:6881,[::]:6881
+(N) 2022-12-07T14:44:49 - Peer ID：-qB4390-
+(N) 2022-12-07T14:44:49 - HTTP User-Agent 为 'qBittorrent/4.3.9'
+(I) 2022-12-07T14:44:49 - DHT 支持 [关闭]
+(I) 2022-12-07T14:44:49 - 本地用户发现支持 [关闭]
+(I) 2022-12-07T14:44:49 - PeX 支持 [关闭]
+(I) 2022-12-07T14:44:49 - 匿名模式 [关闭]
+(I) 2022-12-07T14:44:49 - 加密支持 [开启]
+(I) 2022-12-07T14:44:49 - IP 地理数据库已加载。类型：DBIP-Country-Lite。构建时间：Thu Dec 1 09:29:19 2022。
+(N) 2022-12-07T14:44:49 - 使用内置 Web UI。
+(N) 2022-12-07T14:44:49 - 已成功加载所选地区 (zh) 的 Web UI 翻译。
+(N) 2022-12-07T14:44:49 - Web UI：正在监听 IP：*，端口：55555
+(I) 2022-12-07T14:44:49 - 成功监听 IP：127.0.0.1，端口：TCP/6881
+(I) 2022-12-07T14:44:49 - 成功监听 IP：127.0.0.1，端口：UDP/6881
+(I) 2022-12-07T14:44:49 - 成功监听 IP：172.17.0.10，端口：TCP/6881
+(I) 2022-12-07T14:44:49 - 成功监听 IP：172.17.0.10，端口：UDP/6881
+(N) 2022-12-07T14:45:02 - WebAPI 登录成功。IP：::ffff:172.17.0.1
