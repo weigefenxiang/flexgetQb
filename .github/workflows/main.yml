@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: 打洞
       run: |
-        date && sudo ufw allow 55555  && sudo ufw allow 56881 
+        sudo ufw allow 55555  && sudo ufw allow 56881 && date 
         echo "端口55555 56881已打开"
         PWD=`pwd`
         python ${PWD}/docker/natter.py -t 55555
