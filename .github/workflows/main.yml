@@ -4,8 +4,8 @@ on:
     paths:
       - '.github/**'
       #- '!docker/**'
-  schedule:
-    - cron: '* */6 * * *'
+  #schedule:
+    #- cron: '* */6 * * *'
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -16,12 +16,6 @@ jobs:
     #timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
-  #  - name: NAT类型
-   #   run: |
-  #      pip install pystun3
-  #      python3 -V
-  #      find /usr -name pystun3
-  #      exit
     - name: 解压
       run: |
         date && sudo ufw allow 55555  && sudo ufw allow 56881 
