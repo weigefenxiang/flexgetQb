@@ -11,17 +11,18 @@ while true
 do
   echo "正在删除种子..." 
   autoremove-torrents --conf=/root/autoremove.config.yml  --log=/root/logs/
-  if [[ $i -ge 3 ]];then
+  if [[ $i -ge 2 ]];then
     echo "第 $i 次 开始执行任务..." 
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute
     tail -n 20 /root/logs/flexget.log
+    tail -n 10 /root/logs/flexget.log
     i=0
     let y++
     end=$(date +%M)
     take=$(( end - start ))
     echo "已经运行 ${take} 分钟。"
     cat /root/logs/flexget.log
-    if [[ $y -ge 3 ]];then
+    if [[ $y -ge 2 ]];then
       echo "超时，正在退出！"
       break
     fi
