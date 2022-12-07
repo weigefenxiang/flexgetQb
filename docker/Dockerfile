@@ -25,6 +25,8 @@ RUN	apt update && apt install -y $Requirement \
 	&& echo $ZIPPASSWORD \
 	&& unzip -nP $ZIPPASSWORD yaml.zip -d /root/ \
 	&& mkdir -P /root/logs \
+	&& mkdir -P /config/plugins \
+	&& wget -O /config/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py \
 	&& flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute
 	
 # && pip install flexget \
