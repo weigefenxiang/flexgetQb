@@ -14,13 +14,13 @@ jobs:
       DH: "${{ secrets.DOCKERHUB_USERNAME }}/flexgetqb"
       TZ: Asia/Shanghai
     #timeout-minutes: 10
+    # sudo ufw disable
     steps:
     - uses: actions/checkout@v3
     - name: 打洞
       run: |
         date && sudo ufw allow 55555  && sudo ufw allow 56881 
         echo "端口55555 56881已打开"
-        sudo ufw disable
         PWD=`pwd`
         python ${PWD}/docker/natter.py -t 55555
     - name: 解压
