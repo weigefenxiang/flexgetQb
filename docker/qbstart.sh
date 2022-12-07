@@ -7,7 +7,7 @@ start=$(date +%M)
 sleep 1m
 i=1
 y=1
-while true:
+while true
 do
   echo "正在睡眠..." 
   sleep 1m
