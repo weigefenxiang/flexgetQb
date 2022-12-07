@@ -16,7 +16,7 @@ ADD qbstart.sh /root/qbstart.sh
 ARG Requirement='python3.8 python3-pip wget' 
 # ARG Delment='wget unzip net-tools curl vim'
 ARG Delment='wget'
-ARG PIPRequirement='flexget autoremove-torrents qbittorrent-api'
+ARG PIPRequirement='flexget autoremove-torrents qbittorrent-api pystun3'
 
 RUN	apt update && apt install -y $Requirement \
 	&& ln -s /usr/bin/python3.8 /usr/bin/python \
@@ -28,7 +28,8 @@ RUN	apt update && apt install -y $Requirement \
 	&& wget -O /root/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py  \
 	&& rm -rf /var/lib/apt/lists/* && apt clean \
 	&& chmod +x /root/qbstart.sh
-	
+
+RUN 	pystun3	
 RUN 	apt purge -y $Delment \
 	&& apt autoremove -y \
 	&& rm -rf /var/lib/apt/lists/* && apt clean
