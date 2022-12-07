@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /root/
 
 ADD .vimrc /root/.vimrc
-ADD qbconfig /config
+ADD qbconfig /config           # qb配置
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
 ARG Delment='wget unzip'
@@ -21,8 +21,8 @@ RUN	apt update && apt install -y $Requirement \
 	&& which flexget && flexget -V \
 	&& which pip && pip -V \
 	&& mkdir -p /root/logs \
-	&& mkdir -p /config/plugins \
-	&& wget -O /config/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py 
+	&& mkdir -p /root/plugins \
+	&& wget -O /root/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py 
 	
 # && pip install flexget \
 # && which flexget
