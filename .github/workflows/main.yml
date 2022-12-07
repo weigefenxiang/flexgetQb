@@ -6,7 +6,8 @@ on:
       #- '!docker/**'
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       VER: "0.1"
       DH: "${{ secrets.DOCKERHUB_USERNAME }}/flexgetqb"
@@ -36,7 +37,8 @@ jobs:
     - name: Docker
       run: |
         df -h
-        docker run -itd --privileged --name qb -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 -v docker/config.yml:/root/config.yml -v docker/autoremove.config.yml:/root/autoremove.config.yml --restart=always  image1
+        PWD=`pwd`
+        docker run -itd --privileged --name qb -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 -v ${PWD}/docker/config.yml:/root/config.yml -v ${PWD}/docker/autoremove.config.yml:/root/autoremove.config.yml --restart=always  image1
         df -h
         chmod +x docker/qbstart.sh
         bash docker/qbstart.sh
