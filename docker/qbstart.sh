@@ -2,7 +2,7 @@
 
 flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute
 tail -n 40 /root/logs/flexget.log
-#tail -n 50 /config/qBittorrent/qbittorrent.log
+tail -n 50 /config/qBittorrent/logs/qbittorrent.log
 find / -name qbittorrent.log
 start=$(date +%M)
 
