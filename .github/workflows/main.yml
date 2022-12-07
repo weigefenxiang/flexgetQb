@@ -19,6 +19,8 @@ jobs:
     - name: 解压
       run: |
         sudo ufw allow 55555 && date
+        ls -al $PWD/docker
+        ls -al docker/
         PWD=`pwd` && echo $PWD
         configYml="docker/config.yml"
         echo $configYml
