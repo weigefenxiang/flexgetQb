@@ -2,7 +2,8 @@
 
 flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute
 tail -n 40 /root/logs/flexget.log
-tail -n 50 /config/qBittorrent/qbittorrent.log
+#tail -n 50 /config/qBittorrent/qbittorrent.log
+find / -name qbittorrent.log
 start=$(date +%M)
 
 sleep 1m
@@ -17,7 +18,7 @@ do
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --cron  execute 
     tail -n 40 /root/logs/flexget.log
     tail -n 4 /root/logs/autoremove*.log
-    tail -n 50 /config/qBittorrent/qbittorrent.log
+    #tail -n 50 /config/qBittorrent/qbittorrent.log
     i=0
     let y++
     end=$(date +%M)
