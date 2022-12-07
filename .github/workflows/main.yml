@@ -7,7 +7,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    #runs-on: ubuntu-20.04
     env:
       VER: "0.1"
       DH: "${{ secrets.DOCKERHUB_USERNAME }}/flexgetqb"
@@ -40,14 +39,10 @@ jobs:
         ls -al $PWD &&  echo "路径${PWD}"
         ls -al $PWD/docker/ &&  echo "路径${PWD}/docker/"
         docker run -itd --privileged --name qb -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 -v ${PWD}/config.yml:/root/config.yml -v ${PWD}/autoremove.config.yml:/root/autoremove.config.yml --restart=always  image1
-        echo "PWD地址: ${PWD}" 
-        docker exec qb  ls -al
-        echo "命令: docker exec qb  ls -al"
-        docker exec qb  ls -al /root/
-        echo "命令: docker exec qb  ls -al /root/"
         df -h
     - name: start
       run: |
         docker exec qb  ./qbstart.sh
+        python ${PWD}/docker/qbapi.py
 ##################
        
