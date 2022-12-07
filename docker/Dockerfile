@@ -10,9 +10,10 @@ WORKDIR /root/
 
 ADD .vimrc /root/.vimrc
 ADD qbconfig /config
+ADD qbstart.sh /root/qbstart.sh
 
 ARG Requirement='python3.8 python3-pip wget unzip net-tools curl vim' 
-ARG Delment='wget unzip'
+ARG Delment='wget unzip net-tools curl vim'
 ARG PIPRequirement='flexget autoremove-torrents'
 
 RUN	apt update && apt install -y $Requirement \
@@ -22,14 +23,15 @@ RUN	apt update && apt install -y $Requirement \
 	&& which pip && pip -V \
 	&& mkdir -p /root/logs \
 	&& mkdir -p /root/plugins \
-	&& wget -O /root/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py 
+	&& wget -O /root/plugins/nexusphp.py https://raw.githubusercontent.com/Juszoe/flexget-nexusphp/master/nexusphp.py  \
+	&& rm -rf /var/lib/apt/lists/* && apt clean \
+	&& chmod +x /root/qbstart.sh
 	
 # && pip install flexget \
 # && which flexget
 
 RUN     sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list \
-	&& sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list \
-	&& rm -rf /var/lib/apt/lists/* && apt clean
+	&& sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
 # RUN apt update
   
 ADD pip.conf /root/.pip/pip.conf
