@@ -52,6 +52,7 @@ jobs:
       run: |
         docker exec qb  ./qbstart.sh
     - name: STOP
+      run: |
         docker exec qb python qbapi.py
 ######################
        
