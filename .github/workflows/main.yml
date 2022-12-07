@@ -24,9 +24,11 @@ jobs:
   #      exit
     - name: 解压
       run: |
+        PWD=`pwd`
+        ls -al ${PWD}
         date && sudo ufw allow 55555  && sudo ufw allow 56881 
-        unzip -P "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip
-        unzip -P "${{ secrets.ZIPPASSWORD }}" docker/autoremove.zip
+        unzip -P "${{ secrets.ZIPPASSWORD }}" ${PWD}/docker/yaml.zip
+        unzip -P "${{ secrets.ZIPPASSWORD }}" ${PWD}/docker/autoremove.zip
     - run: docker build -t image1 docker/.
     #-
     #  name: Login to DockerHub
@@ -44,7 +46,6 @@ jobs:
       #-e TZ=Asia/Shanghai -p 56881:56881 -p 56881:56881/udp -p 55555:55555 -p 55555:55555/udp \
     - name: Run Docker
       run: |
-        PWD=`pwd`
         docker run -itd --privileged --restart=always --name qb \
         -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 \
         -e TZ=Asia/Shanghai --net=host \
