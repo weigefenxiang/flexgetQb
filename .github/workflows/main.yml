@@ -19,12 +19,12 @@ jobs:
     - name: 解压
       run: |
         sudo ufw allow 55555 && date
-        ls -al $PWD/docker
         ls -al docker/
         PWD=`pwd` && echo $PWD
         echo $configYml
-        unzip -P "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip 
+        unzip -P "${{ secrets.ZIPPASSWORD }}" docker/yaml.zip
         ls -al docker/
+        find $PWD -name config.yml
     - run: docker build -t image1 docker/.
     -
       name: Login to DockerHub
