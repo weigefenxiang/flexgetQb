@@ -17,9 +17,9 @@ ARG PIPRequirement='flexget autoremove-torrents'
 
 RUN	apt update && apt install -y $Requirement \
 	&& ln -s /usr/bin/python3.8 /usr/bin/python \
-	&& pip -V \
 	&& pip install $PIPRequirement \
-	&& which flexget
+	&& which flexget && flexget -V \
+	&& which pip && pip -V
 # && pip install flexget \
 # && which flexget
 
