@@ -34,5 +34,5 @@ jobs:
         sudo ufw allow 55555 && date
         docker run -itd --privileged --name ub -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 --restart=always  image1 bash
         
-###
+####
        
