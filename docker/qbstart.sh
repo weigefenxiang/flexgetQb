@@ -21,7 +21,6 @@ do
     end=$(date +%M)
     take=$(( end - start ))
     echo "已经运行 ${take} 分钟。"
-    cat /root/logs/flexget.log
     if [[ $y -ge 2 ]];then
       echo "超时，正在退出！"
       break
