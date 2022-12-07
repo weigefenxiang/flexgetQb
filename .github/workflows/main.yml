@@ -40,7 +40,7 @@ jobs:
         PWD=`pwd`
         docker run -itd --privileged --restart=always --name qb \
         -e WEBUI_PORT=55555  -e UID=1000 -e GID=1000 \
-        -e TZ=Asia/Shanghai -p ::56881 -p ::56881/udp -p 55555:55555 \
+        -e TZ=Asia/Shanghai -p 56881:56881 -p 56881:56881/udp -p 55555:55555 -p 55555:55555/udp \
         -v ${PWD}/config.yml:/root/config.yml \
         -v ${PWD}/autoremove.config.yml:/root/autoremove.config.yml \
         -v ${PWD}/docker/qbapi.py:/root/qbapi.py  \
