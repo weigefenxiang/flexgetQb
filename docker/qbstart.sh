@@ -1,7 +1,6 @@
 #!/bin/bash
 
 flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute &>/dev/null
-autoremove-torrents --conf=/root/autoremove.config.yml  --log=/root/logs/
 start=$(date +%M)
 
 sleep 1m
