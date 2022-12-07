@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /root/
 
-RUN rm -f /config
+RUN rm -rf /config
 
 ADD .vimrc /root/.vimrc
 ADD qbconfig /config
