@@ -15,7 +15,7 @@ do
     echo "第 $i 次 开始执行任务..." 
     flexget -c /root/config.yml --logfile  /root/logs/flexget.log  --test  execute
     tail -n 20 /root/logs/flexget.log
-    tail -n 10 /root/logs/flexget.log
+    tail -n 10 /root/logs/autoremove*.log
     i=0
     let y++
     end=$(date +%M)
