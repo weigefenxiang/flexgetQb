@@ -123,8 +123,8 @@ set expandtab
 " 的值,两者保持一致,方便统一缩进.
 set softtabstop=-1
 
-" 设置颜色主题,适用于黑色背景.
-colorscheme slate
+" 设置颜色主题,适用于黑色背景. 群晖没有
+" colorscheme slate
 
 " 创建一个新的 MyTabSpace 组,并设置它的颜色
 highlight MyTabSpace ctermfg=darkgrey
